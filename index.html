@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACADEM-IA | Tu futuro, sin barreras</title>
+<style>
+:root{--navy:#102b50;--blue:#174d77;--teal:#73d5d0;--pale:#eaf4f7;--ink:#17324d}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6;background:#f7fbfd}
+header{background:var(--navy);color:white;padding:18px max(5vw,20px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{font-size:1.45rem;font-weight:800;letter-spacing:.04em}.brand span{color:var(--teal)}
+nav a{color:white;text-decoration:none;margin:0 8px;font-weight:600}nav a:hover{text-decoration:underline;color:var(--teal)}
+.hero{background:linear-gradient(135deg,#102b50,#174d77);color:white;padding:72px max(6vw,22px);text-align:center}
+.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.1;margin:0 auto 18px;max-width:850px}.hero p{font-size:1.2rem;max-width:760px;margin:0 auto 26px;color:#e6f7ff}
+.btn{display:inline-block;background:var(--teal);color:#102b50;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:800;border:0;cursor:pointer}
+main{max-width:1050px;margin:auto;padding:38px 20px}.section-title{text-align:center;color:var(--navy);font-size:2rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.card{background:white;border:1px solid #d9e8ef;border-radius:16px;padding:22px;box-shadow:0 5px 18px #17324d0b}.card h3{color:var(--blue);margin-top:0}
+.panel{background:var(--pale);padding:28px;border-radius:18px;margin:30px 0}
+label{font-weight:700;display:block;margin:12px 0 5px}input,select,textarea{width:100%;padding:12px;border:1px solid #aac5d3;border-radius:9px;font:inherit}
+#respuesta{margin-top:14px;padding:14px;background:white;border-radius:10px;min-height:48px}
+footer{text-align:center;background:var(--navy);color:white;padding:25px}
+small{color:#557086}.tag{display:inline-block;background:#d6f5f2;color:#13515a;padding:4px 10px;border-radius:20px;font-weight:bold}
+</style></head>
+<body>
+<header><div class="brand">📘 ACADEM<span>-IA</span></div><nav><a href="#nosotros">Nosotros</a><a href="#beneficios">Beneficios</a><a href="#tutor">Tutor demo</a><a href="simulador.html">Simulador</a></nav></header>
+<section class="hero"><span class="tag">Preparación preuniversitaria gratuita</span><h1>Tu futuro no depende de cuánto puedes pagar.</h1><p>Aprende, practica y refuerza tus conocimientos con herramientas educativas apoyadas en Inteligencia Artificial.</p><a class="btn" href="simulador.html">Probar simulador de admisión</a></section>
+<main>
+<section id="nosotros"><h2 class="section-title">¿Qué es ACADEM-IA?</h2><p>ACADEM-IA es una iniciativa social que busca reducir la desigualdad educativa ofreciendo preparación preuniversitaria gratuita a estudiantes de los últimos años de secundaria que no cuentan con recursos económicos para acceder a academias o profesores particulares. La plataforma propone un tutor virtual personalizado para reforzar conocimientos, resolver ejercicios, aclarar dudas y practicar preguntas similares a las de admisión.</p></section>
+<section id="beneficios"><h2 class="section-title">Aprende con más oportunidades</h2><div class="cards"><article class="card"><h3>📚 Refuerzo académico</h3><p>Repasa conceptos y fortalece los temas que necesitas mejorar.</p></article><article class="card"><h3>💬 Tutor virtual</h3><p>Explora una demostración de apoyo para formular dudas y recibir orientación.</p></article><article class="card"><h3>📝 Práctica de admisión</h3><p>Resuelve preguntas de práctica y revisa tu resultado al instante.</p></article></div></section>
+<section class="panel" id="tutor"><h2>Prueba el tutor virtual (demostración)</h2><p>Escribe una consulta académica. Esta versión es una demostración local con respuestas de ejemplo, no una conexión a un servicio de IA.</p><label for="pregunta">Tu consulta</label><textarea id="pregunta" rows="3" placeholder="Ejemplo: ¿Cómo calculo el 20 % de 150?"></textarea><button class="btn" onclick="responder()">Consultar</button><div id="respuesta" aria-live="polite">Aquí aparecerá una orientación de ejemplo.</div></section>
+<section><h2 class="section-title">Nuestra meta</h2><p style="text-align:center">Que más estudiantes puedan prepararse para continuar sus estudios, sin que la falta de recursos económicos sea una barrera.</p></section>
+</main><footer><strong>ACADEM-IA</strong><br>La educación abre puertas. La IA te ayuda a cruzarlas.<br><small style="color:#c9e5ee">Iniciativa social educativa | Proyecto académico</small></footer>
+<script>
+function responder(){const q=document.getElementById('pregunta').value.toLowerCase();let r="¡Buena pregunta! Divide el problema en pasos, identifica los datos y verifica tu resultado. Esta demostración no está conectada a una IA real.";
+if(q.includes("20")&&q.includes("150"))r="El 20 % equivale a 0.20. Multiplica 150 × 0.20 = 30. ¡La respuesta es 30!";
+else if(q.includes("ecuación")||q.includes("ecuacion"))r="Para resolver una ecuación, reúne los términos con incógnita en un lado, las constantes en el otro y realiza la operación inversa.";
+else if(q.includes("sinónimo")||q.includes("sinonimo"))r="Un sinónimo es una palabra con significado igual o parecido a otra. Por ejemplo: feliz y contento.";
+document.getElementById('respuesta').textContent=r;}
+</script></body></html>
